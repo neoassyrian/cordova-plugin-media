@@ -104,6 +104,11 @@ id="cordova-plugin-media"
                 <param name="ios-package" value="CDVSound" />
             </feature>
         </config-file>
+        <config-file target="*-Info.plist" parent="UIBackgroundModes">
+            <array>
+                <string>audio</string>
+            </array>
+        </config-file>
         <header-file src="src/ios/CDVSound.h" />
         <source-file src="src/ios/CDVSound.m" />
     </platform>
