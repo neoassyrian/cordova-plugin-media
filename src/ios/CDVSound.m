@@ -375,7 +375,7 @@
                         [avPlayer setRate:customRate];
                     } else {
                         NSLog(@"Playing stream with AVPlayer & default rate");
-                        [avPlayer play];
+                        [avPlayer playImmediatelyAtRate:1.0];
                     }
 
                 } else {
@@ -399,7 +399,7 @@
                         audioFile.player.rate = [audioFile.rate floatValue];
                     }
 
-                    [audioFile.player play];
+                    [audioFile.player playImmediatelyAtRate:1.0];
                     duration = round(audioFile.player.duration * 1000) / 1000;
                 }
 
