@@ -399,7 +399,8 @@
                         audioFile.player.rate = [audioFile.rate floatValue];
                     }
 
-                    [audioFile.player playImmediatelyAtRate:1.0];
+                        float startAtRate = 1.0;
+                    [audioFile.player play];
                     duration = round(audioFile.player.duration * 1000) / 1000;
                 }
 
