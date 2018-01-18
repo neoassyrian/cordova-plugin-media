@@ -368,9 +368,11 @@
                         NSLog(@"Duration is infifnite, setting it to -1");
                         duration = -1;
                     }
-                 
-                    avPlayer.automaticallyWaitsToMinimizeStalling = NO;
-
+                    if ([resourcePath rangeOfString:@"listen"].location != NSNotFound) {
+                      avPlayer.automaticallyWaitsToMinimizeStalling = YES;
+                    } else {
+                      avPlayer.automaticallyWaitsToMinimizeStalling = NO;
+                    }
                     if (audioFile.rate != nil){
                         float customRate = [audioFile.rate floatValue];
                         NSLog(@"Playing stream with AVPlayer & custom rate");
